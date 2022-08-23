@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Dimensions
 } from 'react-native';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, Fragment } from 'react';
 
 import Colors from '../theme/Colors';
 import ICar from '../types/car.d';
@@ -54,7 +54,7 @@ export default function CarResultsScreen({ route, navigation }: any) {
     <View style={styles.container}>
       {isListLoading ? <ActivityIndicator /> : (
         filteredCarCollection.length <= 0 ? (
-          <View style={styles.noMatchContainer}>
+          <Fragment>
             <Text style={styles.goBackText}>No cars matched that search</Text>
             <Button
               title='Go Back'
@@ -64,7 +64,7 @@ export default function CarResultsScreen({ route, navigation }: any) {
               buttonStyle={styles.button}
               buttonTextStyle={styles.buttonText}
             />
-          </View>
+          </Fragment>
         ) : (
           <FlatList
             data={filteredCarCollection}
