@@ -104,10 +104,6 @@ const styles = StyleSheet.create({
     maxWidth: 500,
     borderRadius: 5,
   },
-  noMatchContainer: {
-    flex: 1,
-    alignItems: 'flex-start'
-  },
   goBackText: {
     marginVertical: 10,
   },
