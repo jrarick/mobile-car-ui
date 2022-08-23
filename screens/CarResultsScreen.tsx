@@ -10,9 +10,9 @@ import {
 import { useState, useEffect, useContext } from 'react';
 
 import Colors from '../theme/Colors';
-import ICar from '../types/car';
+import ICar from '../types/car.d';
+import carCollectionContextType from '../types/carCollectionContext.d';
 import Button from '../components/Button';
-import carCollectionContextType from '../types/carCollectionContext';
 import { CarCollectionContext } from '../context/CarCollectionContext';
 
 const deviceWidth = Dimensions.get('window').width;

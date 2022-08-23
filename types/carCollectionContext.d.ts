@@ -1,4 +1,4 @@
-import ICar from './car';
+import ICar from './car.d';
 
 type carCollectionContextType = {
   carCollection: ICar[];

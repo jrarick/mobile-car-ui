@@ -2,11 +2,11 @@ import { useState, useEffect, createContext } from 'react';
 import axios from 'axios';
 
 import ICar from '../types/car';
-import carCollectionContextType from '../types/carCollectionContext';
+import carCollectionContextType from '../types/carCollectionContext.d';
 
 export const CarCollectionContext = createContext<carCollectionContextType | null>(null);
 
-const CarCollectionProvider = ({ children }) => {
+const CarCollectionProvider = ({ children }: any) => {
   const [carCollection, setCarCollection] = useState<ICar[]>([]);
   const [filteredIds, setFilteredIds] = useState<number[]>([]);
 

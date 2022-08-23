@@ -13,8 +13,8 @@ import colorFilterData from '../data/colorFilterData';
 import makeFilterData from '../data/makeFilterData';
 import priceFilterData from '../data/priceFilterData';
 import { Dropdown } from 'react-native-element-dropdown';
-import carCollectionContextType from '../types/carCollectionContext';
-import { IFilter, IPriceFilter } from '../types/filter';
+import carCollectionContextType from '../types/carCollectionContext.d';
+import { IFilter, IPriceFilter } from '../types/filter.d';
 import { CarCollectionContext } from '../context/CarCollectionContext';
 
 const deviceWidth = Dimensions.get('window').width;
@@ -71,7 +71,7 @@ export default function CarSearchScreen({navigation}: any) {
           labelField='label'
           valueField='value'
           placeholder='By Make'
-          onChange={item => {
+          onChange={(item: IFilter) => {
             setActiveMakeFilter({ label: item.label, value: item.value });
           }}
         />
@@ -82,7 +82,7 @@ export default function CarSearchScreen({navigation}: any) {
           labelField='label'
           valueField='value'
           placeholder='By Color'
-          onChange={item => {
+          onChange={(item: IFilter) => {
             setActiveColorFilter({ label: item.label, value: item.value });
           }}
         />
@@ -93,7 +93,7 @@ export default function CarSearchScreen({navigation}: any) {
           labelField='label'
           valueField='value'
           placeholder='By Price'
-          onChange={item => {
+          onChange={(item: IPriceFilter) => {
             setActivePriceFilter({ label: item.label, value: item.value });
           }}
         />
@@ -152,6 +152,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 5,
+    width: deviceWidth / 2,
+    maxWidth: 400,
     backgroundColor: Colors.white,
   },
   dropdown: {

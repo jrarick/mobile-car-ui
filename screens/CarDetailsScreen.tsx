@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, Fragment } from 'react';
 import {
   View,
   Text,
@@ -11,8 +11,8 @@ import {
 import Button from '../components/Button';
 import Colors from '../theme/Colors';
 import { CarCollectionContext } from '../context/CarCollectionContext';
-import ICar from '../types/car';
-import carCollectionContextType from '../types/carCollectionContext';
+import ICar from '../types/car.d';
+import carCollectionContextType from '../types/carCollectionContext.d';
 
 type VinResultType = {
   Value: null | string;
@@ -21,7 +21,7 @@ type VinResultType = {
   VariableId: number;
 };
 
-export default function CarDetailsScreen({ route, navigation }: any) {
+export default function CarDetailsScreen({ route }: any) {
   const { carCollection } = useContext(CarCollectionContext) as carCollectionContextType;
   const selectedCarId: number = route.params.id;
 
@@ -53,7 +53,7 @@ export default function CarDetailsScreen({ route, navigation }: any) {
   return (
     <View style={styles.container}>
       {isCarLoading ? <ActivityIndicator /> : (
-        <View>
+        <Fragment>
           <Image
             source={{ uri: 'https://picsum.photos/600/400' }}
             style={styles.imageStyle}
@@ -72,7 +72,7 @@ export default function CarDetailsScreen({ route, navigation }: any) {
               buttonTextStyle={styles.buttonText}
             />
           </View>
-        </View>
+        </Fragment>
       )}
     </View>
   );

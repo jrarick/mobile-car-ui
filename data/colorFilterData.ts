@@ -1,4 +1,4 @@
-import { IFilter } from '../types/filter';
+import { IFilter } from '../types/filter.d';
 
 const colorFilterData: IFilter[] = [
   {

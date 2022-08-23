@@ -1,4 +1,4 @@
-import { IPriceFilter } from '../types/filter';
+import { IPriceFilter } from '../types/filter.d';
 
 const priceFilterData: IPriceFilter[] = [
   {
