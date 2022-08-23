@@ -48,7 +48,7 @@ export default function CarDetailsScreen({ route }: any) {
           .catch(error => console.error(error));
       }
     });
-  }, []);
+  }, [carCollection, selectedCarId]);
 
   return (
     <View style={styles.container}>

@@ -48,7 +48,7 @@ export default function CarResultsScreen({ route, navigation }: any) {
     }
 
     return () => { mounted = false };
-  }, [])
+  }, []);
 
   return (
     <View style={styles.container}>

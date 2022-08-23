@@ -1,7 +1,7 @@
 import { useState, useEffect, createContext } from 'react';
 import axios from 'axios';
 
-import ICar from '../types/car';
+import ICar from '../types/car.d';
 import carCollectionContextType from '../types/carCollectionContext.d';
 
 export const CarCollectionContext = createContext<carCollectionContextType | null>(null);

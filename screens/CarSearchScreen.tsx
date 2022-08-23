@@ -46,7 +46,7 @@ export default function CarSearchScreen({navigation}: any) {
     });
 
     return unsubscribe;
-  }, [navigation]);
+  }, [navigation, clearFilteredIds]);
 
   const filterResults = () => {
     carCollection.forEach(carEntry => {
